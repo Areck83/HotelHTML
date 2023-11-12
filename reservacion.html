@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="estylereser.css">
+  <title>Registrarse</title>
+  <link rel="shortcut icon" type="image/png" href="imagenes/owlico.png"/>
+  <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/validarcampo.js"></script>
+     <script type="text/javascript">
+          $(function(){
+              $('').validCampoChar('abcdefghijklmnñopqrstuvwxyzáéíóú 0123456789');
+              $('').validCampoChar('abcdefghijklmnñopqrstuvwxyz0123456789');
+              $('').validCampoChar('abcdefghijklmnñopqrstuvwxyz 0123456789');
+              $('').validCampoChar('abcdefghijklmnñopqrstuvwxyz 0123456789');
+          });
+      </script>
+      <script>
+       $(document).ready(function(){
+         $("#form-register").submit(function() {
+           if ($("#caja1").val().length=0){
+             alert("Introduce tu nombre completo por favor");
+             return false;
+           }
+           if ($("#caja1").val().length>60){
+             alert("ï¿½Nombre demasiado largo!");
+           }
+           if ($("#caja2").val().length=0){
+             alert("Debes de introducir un nombre de usuario para el inicio de sesiï¿½n");
+             return false;
+           }
+           if ($("#caja2").val().length>10){
+             alert("El nombre de usuario debe tener mï¿½ximo 10 letras");
+           }
+         });
+       });
+       </script>
+</head>
+<body>
+  <h1>Hotel vergas</h1>
+  <form class="form-register" action="reservacion.php" method="get" enctype="multipart/form-data">
+    <h2>ReservaciÃ³n</h2>
+    <div class="contenedor-inputs">
+      <input id="caja1" type="text" name="idreservacion" autocomplete="off" placeholder="No. ReservaciÃ³n" class="input-30" size="60" maxlength="60"/> <br/>
+      <select name="tipohabitaciÃ³n" class="input-30b">
+        <option selected value="0"=>Forma de Pago </option>
+            <option value="1">Efectivo</option>
+            <option value="2">Débito</option>
+            <option value="3">Crédito</option>
+        </option>
+      <input id="caja2" type="text" name="Nombre" autocomplete="off" placeholder="Nombre de Cliente" class="input-30" size="60" maxlength="60"/> <br/>
+                  <p>Fecha</p>
+                        <label>Actual</label>
+                        <label>Entrada</label>
+                        <label>Salida</label> <br/>
+                        <input type="date" name="fechactual" autocomplete="off" class="input-30" size="60" maxlength="60"/>
+                        <input type="date" name="fechllegada" autocomplete="off" class="input-30" size="60" maxlength="60"/>
+                        <input type="date" name="fechsalida" autocomplete="off" class="input-30" size="60" maxlength="60"/> <br/>
+
+
+                  <p>HabitaciÃ³n</p>
+                          <select name="tipohabitaciÃ³n" class="input-50b">
+                            <option selected value="0"=>Tipo de Habitacion </option>
+                                <option value="1">Individual</option>
+                                <option value="2">Doble</option>
+                                <option value="3">Familiar</option>
+                            </option>
+                      <input id="caja3" type="text" name="costo" autocomplete="off" placeholder="Costo de HabitaciÃ³n" class="input-50" size="10" maxlength="6"/>
+                            <select name="tipohabitaciÃ³n" class="input-50b">
+                            <option selected value="0"=>NÃºmero de Personas  </option>
+                                <option value="1">1 Persona</option>
+                                <option value="2">2 Personas</option>
+                                <option value="3">4 personas</option>
+                            </option> <br/>
+                        <input id="caja4" type="number" name="numhab" autocomplete="off" placeholder="NÃºmero de HabitaciÃ³n" class="input-50" size="10" maxlength="3"/> <br/>
+
+
+
+                  <p>Datos de Cliente</p>
+                          <label class="input-100">Hora de llegada</label> <br/>
+                          <input type="time" name="fechsalida" autocomplete="off" class="input-30" size="60" maxlength="60"/>
+                          <input id="caja6" type="text" name="placas" autocomplete="off" placeholder="Placas" class="input-30" size="60" maxlength="60"/> <br/>
+                          <input type="tel" name="telefono" autocomplete="off" placeholder="Telefono" class="input-30" size="60" maxlength="60"/> <br/>
+
+
+                  <p>Datos Extra</p>
+                          <input id="caja7" type="text" name="observacion" autocomplete="off" placeholder="Observaciones" class="input-observaciones" size="250" maxlength="250"/>
+                          <input id="caja8" type="text" name="elaboro" autocomplete="off" placeholder="ElaborÃ³" class="input-elaboro" size="60" maxlength="60"/> <br/>
+
+
+          <input type="submit" value="Guardar" name="Guardar" class="btn-enviar"/>
+
+      </div>
+  </script>
+</body>
+</html>

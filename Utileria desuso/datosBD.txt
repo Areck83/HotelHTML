@@ -1,0 +1,8 @@
+nombre completo varchar [10]
+nombre usuario varchar [60]
+alias varchar [10]
+email varchar [50]
+contraseña varchar [10]
+foto varchar [30]
+
+Tabla: Proyecto2DEPW
